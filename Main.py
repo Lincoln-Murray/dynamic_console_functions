@@ -1,4 +1,5 @@
 
+#The function for user input, you send through the list of options that can be selected and then the query string and it returns the index in the option list.
 def user_input(_option_list:list, _input_text:str = "What would you like to do? ") -> int:
     valid = False
     while not valid:
