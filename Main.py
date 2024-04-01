@@ -19,3 +19,9 @@ def user_input(_option_list:list, _input_text:str = "What would you like to do? 
             except:
                 valid = False
                 print('Invalid selection, please try again.')
+
+def print_table(_table):
+    print('_'*71)
+    for item in _table:
+        print('|' + str(_table[0]) + ' ' * (40-len(str(_table[0]))) + '| ' + str(_table[1]) + ' ' * (7-len(str(_table[1]))) + '| ' + str(_table[2])  + ' ' * (7-len(str(_table[2]))) + '| ' + str(_table[3]) + ' ' * (7-len(str(_table[3]))) + '|')
+        
