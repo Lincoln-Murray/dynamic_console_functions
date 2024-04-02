@@ -21,7 +21,22 @@ def user_input(_option_list:list, _input_text:str = "What would you like to do? 
                 print('Invalid selection, please try again.')
 
 def print_table(_table):
-    print('_'*71)
-    for item in _table:
-        print('|' + str(_table[0]) + ' ' * (40-len(str(_table[0]))) + '| ' + str(_table[1]) + ' ' * (7-len(str(_table[1]))) + '| ' + str(_table[2])  + ' ' * (7-len(str(_table[2]))) + '| ' + str(_table[3]) + ' ' * (7-len(str(_table[3]))) + '|')
+    for i in range(0,len(_table[0])):
+        locals()[i] = 0
+    for row in _table:
+        item_num = 0
+        for item in row:
+            if locals()[item_num] < len(str(item)):
+                locals()[item_num] = len(str(item))
+    row_string = '__'
+    for i in range(0,len(_table[0])):
+        row_string = row_string + '_' * (locals()[i]+3)
+    
+
+    for row in _table:
+        row_string = '| '
+        item_num = 0
+        for item in row:
+            row_string = row_string + str(item) + ' ' * (locals()[item_num]-len(str(item))) + ' | '
+        print(row_string)
         
