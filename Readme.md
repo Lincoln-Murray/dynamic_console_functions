@@ -26,10 +26,16 @@ To initiate the library:
 Import Main  
 ```
 
-Then use the functions(in this case validating user input:
+Then use the functions(in this case validating user input):
 
 ```
 choices = ['a', 'b', 'c']
 text = 'Test text: '
 validated_input = Main.user_input(choices, text)
+```  
+
+Printing tables:  
 ```
+table = [[01,02],[03,04]]
+print_table(table)
+```  
