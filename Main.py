@@ -28,9 +28,11 @@ def print_table(_table):
         for item in row:
             if locals()[item_num] < len(str(item)):
                 locals()[item_num] = len(str(item))
-    row_string = '__'
+            item_num += 1
+    header_string = ''
     for i in range(0,len(_table[0])):
-        row_string = row_string + '_' * (locals()[i]+3)
+        header_string = header_string + '_' * (locals()[i]+3)
+    print(header_string)
     
 
     for row in _table:
@@ -38,5 +40,10 @@ def print_table(_table):
         item_num = 0
         for item in row:
             row_string = row_string + str(item) + ' ' * (locals()[item_num]-len(str(item))) + ' | '
+            item_num += 1
         print(row_string)
+    footer_string = '| '
+    for colum_num in range(0, len(_table[0])):
+            footer_string = footer_string + '_' * (locals()[colum_num]) + ' | '
+    print(header_string)
         
