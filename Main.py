@@ -42,8 +42,8 @@ def print_table(_table):
             row_string = row_string + str(item) + ' ' * (locals()[item_num]-len(str(item))) + ' | '
             item_num += 1
         print(row_string)
-    footer_string = '| '
+    footer_string = '|'
     for colum_num in range(0, len(_table[0])):
-            footer_string = footer_string + '_' * (locals()[colum_num]) + ' | '
-    print(header_string)
+            footer_string = footer_string + '_' * (locals()[colum_num]+2) + '|'
+    print(footer_string)
         
