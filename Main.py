@@ -31,7 +31,7 @@ def print_table(_table):
             item_num += 1
     header_string = ''
     for i in range(0,len(_table[0])):
-        header_string = header_string + '_' * (locals()[i]+3)
+        header_string = header_string + '_' * (locals()[i]+2)
     print(header_string)
     
 
@@ -39,11 +39,11 @@ def print_table(_table):
         row_string = '| '
         item_num = 0
         for item in row:
-            row_string = row_string + str(item) + ' ' * (locals()[item_num]-len(str(item))) + ' | '
+            row_string = row_string + str(item) + ' ' * (locals()[item_num]-len(str(item))) + '| '
             item_num += 1
         print(row_string)
     footer_string = '|'
     for colum_num in range(0, len(_table[0])):
-            footer_string = footer_string + '_' * (locals()[colum_num]+2) + '|'
+            footer_string = footer_string + '_' * (locals()[colum_num]+1) + '|'
     print(footer_string)
         
