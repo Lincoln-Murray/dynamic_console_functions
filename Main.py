@@ -20,7 +20,7 @@ def user_input(_option_list:list, _input_text:str = "What would you like to do? 
                 valid = False
                 print('Invalid selection, please try again.')
 
-def print_table(_table):
+def print_table(_table:list, has_header:bool = False):
     for i in range(0,len(_table[0])):
         locals()[i] = 0
     for row in _table:
@@ -33,8 +33,11 @@ def print_table(_table):
     for i in range(0,len(_table[0])):
         header_string = header_string + '_' * (locals()[i]+2)
     print(header_string)
-    
+    footer_string = '|'
+    for colum_num in range(0, len(_table[0])):
+            footer_string = footer_string + '_' * (locals()[colum_num]+1) + '|'
 
+    first_row = True
     for row in _table:
         row_string = '| '
         item_num = 0
@@ -42,8 +45,9 @@ def print_table(_table):
             row_string = row_string + str(item) + ' ' * (locals()[item_num]-len(str(item))) + '| '
             item_num += 1
         print(row_string)
-    footer_string = '|'
-    for colum_num in range(0, len(_table[0])):
-            footer_string = footer_string + '_' * (locals()[colum_num]+1) + '|'
+        if has_header and first_row:
+            print(footer_string)
+        first_row = False
+
     print(footer_string)
         

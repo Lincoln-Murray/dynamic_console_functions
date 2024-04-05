@@ -4,4 +4,4 @@ table = [
     ['aaaaaaa', 'b', 'cc'],
     ['aaaaa', 'bbbbbb', 'c']
 ]
-Main.print_table(table)
+Main.print_table(table, True)
