@@ -1,6 +1,9 @@
-
 # To Do:
 
 ### Todo
-### In Progress  
-* [x] Dynamic tables  
+
+* [ ] Update Readme
+
+### In Progress
+
+* [X] Dynamic tables
