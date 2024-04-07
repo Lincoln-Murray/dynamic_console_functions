@@ -29,9 +29,10 @@ def print_table(_table:list, has_labels:bool = False):
             if locals()[item_num] < len(str(item)):
                 locals()[item_num] = len(str(item))
             item_num += 1
-    header_string = ''
+    header_string = ' '
     for i in range(0,len(_table[0])):
         header_string = header_string + '_' * (locals()[i]+2)
+    header_string = header_string[:-1]
     print(header_string)
     label_string = '|'
     for colum_num in range(0, len(_table[0])):
