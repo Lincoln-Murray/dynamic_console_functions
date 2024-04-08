@@ -8,7 +8,7 @@
 
 ## <a name = "about">About </a>
 
- a project I decided to start in order to compile all the frequently used functions I use when working on small terminal  based projects
+ a project I decided to start in order to compile all the frequently used functions I use when working on small terminal based projects
 
  Happy Coding!
 
@@ -36,6 +36,7 @@ validated_input = Main.user_input(choices, text)
 
 Printing tables:  
 ```
-table = [[01,02],[03,04]]
-print_table(table)
+table = [['Numbers', 'Also numbers'],[01,02],[03,04]]
+has_headers = True
+print_table(table, has_headers)
 ```  
