@@ -20,7 +20,7 @@ def user_input(_option_list:list, _input_text:str = "What would you like to do? 
                 valid = False
                 print('Invalid selection, please try again.')
 
-def print_table(_table:list, has_labels:bool = False):
+def print_table(_table:list, left_buffer:int = 1, right_buffer:int = 0, has_labels:bool = False):
     for i in range(0,len(_table[0])):
         locals()[i] = 0
     for row in _table:
@@ -31,18 +31,18 @@ def print_table(_table:list, has_labels:bool = False):
             item_num += 1
     header_string = ' '
     for i in range(0,len(_table[0])):
-        header_string = header_string + '_' * (locals()[i]+2)
+        header_string = header_string + '_' * (locals()[i]+left_buffer+right_buffer+1)
     header_string = header_string[:-1]
     print(header_string)
     label_string = '|'
     for colum_num in range(0, len(_table[0])):
-            label_string = label_string + '‾' * (locals()[colum_num]+1) + '|'
+            label_string = label_string + '‾' * (locals()[colum_num]+left_buffer+right_buffer) + '|'
     first_row = True
     for row in _table:
-        row_string = '| '
+        row_string = '|' + ' ' *left_buffer
         item_num = 0
         for item in row:
-            row_string = row_string + str(item) + ' ' * (locals()[item_num]-len(str(item))) + '| '
+            row_string = row_string + str(item) + ' ' * (locals()[item_num]-len(str(item))) + ' ' * right_buffer + '|'  + ' ' * left_buffer
             item_num += 1
         print(row_string)
         if has_labels and first_row:
