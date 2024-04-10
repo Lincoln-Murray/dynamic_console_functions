@@ -2,8 +2,8 @@
 
 ### Todo
 
-* [ ] Update Readme
 
 ### In Progress
+* [X] Update Readme
 
 * [X] Dynamic tables
