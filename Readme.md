@@ -38,5 +38,7 @@ Printing tables:
 ```
 table = [['Numbers', 'Also numbers'],[01,02],[03,04]]
 has_headers = True
-print_table(table, has_headers)
+left_side_buffer = 1
+right_side_buffer = 1
+print_table(table, left_side_buffer, right_side_buffer, has_headers)
 ```  
