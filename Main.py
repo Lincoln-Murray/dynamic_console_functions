@@ -20,7 +20,7 @@ def user_input(_option_list:list, _input_text:str = "What would you like to do? 
                 valid = False
                 print('Invalid selection, please try again.')
 
-def print_table(_table:list, left_buffer:int = 1, right_buffer:int = 0, has_labels:bool = False):
+def print_table(_table:list, left_buffer:int = 1, right_buffer:int = 0, has_labels:bool = False) -> None:
     for i in range(0,len(_table[0])):
         locals()[i] = 0
     for row in _table:
