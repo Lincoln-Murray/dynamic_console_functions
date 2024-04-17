@@ -20,10 +20,15 @@ def user_input(_option_list:list, _input_text:str = "What would you like to do? 
                 valid = False
                 print('Invalid selection, please try again.')
 
-def number_input(_type:type = int):
+def number_input(_type:type = int, _input_text:str = "Number: "):
     valid = False
     while not valid:
-        user_input = input(' ')
+        user_input = input(_input_text)
+        if _type == int:
+            try:
+                user_input = int(user_input)
+            except:
+                print(user_input + " is not a valid integer")
 
 def print_table(_table:list, left_buffer:int = 1, right_buffer:int = 0, has_labels:bool = False) -> None:
     for i in range(0,len(_table[0])):
