@@ -24,11 +24,17 @@ def number_input(_type:type = int, _input_text:str = "Number: "):
     valid = False
     while not valid:
         user_input = input(_input_text)
-        if _type == int:
-            try:
+        try:
+            if _type == int:
                 user_input = int(user_input)
-            except:
+            elif _type == float:
+                user_input = float(user_input)
+        except:
+            if _type == int:
                 print(user_input + " is not a valid integer")
+            elif _type == float:
+                print(user_input + " is not a valid floatg")
+
 
 def print_table(_table:list, left_buffer:int = 1, right_buffer:int = 0, has_labels:bool = False) -> None:
     for i in range(0,len(_table[0])):
