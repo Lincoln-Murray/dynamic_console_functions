@@ -29,6 +29,8 @@ def number_input(_type:type = int, _input_text:str = "Number: ", lower_bound: fl
                 user_input = int(user_input)
             elif _type == float:
                 user_input = float(user_input)
+            else:
+                raise
             potentially_valid = False
             if lower_bound != None:
                 if user_input >= lower_bound:
@@ -44,6 +46,8 @@ def number_input(_type:type = int, _input_text:str = "Number: ", lower_bound: fl
                 print(user_input + " is not a valid integer")
             elif _type == float:
                 print(user_input + " is not a valid float")
+            else:
+                print('Invalid attempted type forcing')
 
 
 def print_table(_table:list, left_buffer:int = 1, right_buffer:int = 0, has_labels:bool = False) -> None:
