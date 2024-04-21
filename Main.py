@@ -20,7 +20,7 @@ def user_input(_option_list:list, _input_text:str = "What would you like to do? 
                 valid = False
                 print('Invalid selection, please try again.')
 
-def number_input(_type:type = int, _input_text:str = "Number: ", lower_bound: float|type = None, upper_bound: float|type = None):
+def number_input(_type:type = int, _input_text:str = "Number: ", _lower_bound: float|type = None, _upper_bound: float|type = None):
     valid = False
     while not valid:
         user_input = input(_input_text)
@@ -32,13 +32,13 @@ def number_input(_type:type = int, _input_text:str = "Number: ", lower_bound: fl
             else:
                 raise
             potentially_valid = False
-            if lower_bound != None:
-                if user_input >= lower_bound:
+            if _lower_bound != None:
+                if user_input >= _lower_bound:
                     potentially_valid = True
             else:
                 potentially_valid = True
-            if upper_bound != None and potentially_valid:
-                if user_input <= upper_bound:
+            if _upper_bound != None and potentially_valid:
+                if user_input <= _upper_bound:
                     valid = True
                     return user_input
         except:
