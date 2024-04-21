@@ -42,3 +42,12 @@ left_side_buffer = 1
 right_side_buffer = 1
 print_table(table, left_side_buffer, right_side_buffer, has_headers)
 ```  
+
+Inputting numbers:  
+```
+number_type = int
+input_text = 'Test text: '
+lower_bound = 0 #the lower boundary a number has to be equal or higher than
+upper_bound = 10 #the upper boundary a number has to be equal or lower than
+number_input(number_type, input_textm lower_bound, upper_bound)
+```
