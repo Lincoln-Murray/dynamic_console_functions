@@ -31,7 +31,8 @@ Then use the functions(in this case validating user input):
 ```
 choices = ['a', 'b', 'c']
 text = 'Test text: '
-validated_input = Main.user_input(choices, text)
+display_options = True
+validated_input = Main.user_input(choices, text, display_options)
 ```  
 
 Printing tables:  
