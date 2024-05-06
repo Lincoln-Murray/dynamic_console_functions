@@ -1,6 +1,9 @@
 
 #The function for user input, you send through the list of options that can be selected and then the query string and it returns the index in the option list.
-def user_input(_option_list:list, _input_text:str = "What would you like to do? ") -> int:
+def user_input(_option_list:list, _input_text:str = "What would you like to do? ", _display_options = False) -> int:
+    if _display_options:
+        for option in _option_list:
+            print(option)
     valid = False
     while not valid:
         user_input = input(_input_text)
